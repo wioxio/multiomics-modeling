@@ -1,5 +1,5 @@
 #################################################################################
-#This function accepts lambda and alpha as inputs and can be used to test performance with given parameter set
+#This function accepts lambda and alpha as inputs and can be used to test performance only with immune data
 TestGLM_immune <- function(out, Y, foldid, lambda,alpha, scale=TRUE, coef)
 {
   library(matrixStats)
@@ -20,7 +20,7 @@ TestGLM_immune <- function(out, Y, foldid, lambda,alpha, scale=TRUE, coef)
 
 
 #################################################################################
-#This function tests  lamda values of Ridge regression.
+#This function tests  lamda values of Ridge regression for the microbiome data.
 TestRidge <- function(out, Y, foldid, lambda, scale=TRUE, coef)
 {
   library(matrixStats)
