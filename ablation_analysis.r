@@ -35,6 +35,7 @@ for(i in c(2:length(out$features)))
 gmboost=BoostGLM(gmBtrain, featureweeks, gmBtest, foldid, '../RDSfiles/GLMBoost.rds', TRUE, FALSE) 
 ablation_all=gmboost$Testpval
 
+#Here we make a matrix which will be used to inform which features will be excluded
 ablation_result=matrix( 0, nrow = 2^7, ncol = 7)
 i=1
 for(a in 1:2){
@@ -60,6 +61,7 @@ i=i+1
 }
 }
 
+#This function excludes corresponding features when the row index of the ablation_result matrix is given
 Boost_oblation <- function(i){ 
 print(i)
 exclude_index=c(ablation_result[i,1]*1,ablation_result[i,2]*2,ablation_result[i,3]*3,ablation_result[i,4]*4,ablation_result[i,5]*5,ablation_result[i,6]*6,ablation_result[i,7]*7)
@@ -75,6 +77,7 @@ return(gmboost$Testpval)
 }
 
 
+#Sort the results. In the report, only top 10 results were shown
 
 ablation_all=c(ablation_all,sapply(2:(length(ablation_result[,1])-1), Boost_oblation))
 
