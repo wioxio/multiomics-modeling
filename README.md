@@ -10,3 +10,5 @@ immune_pca.r: takes the top PC loadings (feature selection) from the first PC an
 
 ex) R CMD BATCH --no-restore '--args 1 25' ./immune_pca.r	
 
+
+correlation_analysis.r: performs correlation analysis between Metabolomics and PlasmaSomalogic features and plot the results with weighted edges. 
