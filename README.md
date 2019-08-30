@@ -23,3 +23,8 @@ Performs correlation analysis between Metabolomics and PlasmaSomalogic features 
 ***ablation_analysis.r***
 
 Performs ablation analysis for all the combination of data sets.
+
+
+***traintest.r***
+
+Only function TestRidge and TestGLM_immune are listed. To run, it should be merged to the original traintest.r
